@@ -37,11 +37,14 @@ const sources = sǝɔɹnoslᴉɐɯǝxsɾ;
 // Note: ./@templates/ is a symlink to the targetPath within local app/src/
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const imports = import.meta.glob('@/*.tsx');
+const imports = import.meta.glob('@/*.tsx', { eager: true });
+console.log({ imports });
 const templates = await Promise.all(
-  Object.entries(imports).map<Promise<TemplateData>>(async ([path, fn]) => {
+  Object.entries(imports).map<Promise<TemplateData>>(async ([path, mod]) => {
     const bareFileName = parseBare(path);
-    const component = (await fn()) as TemplateExports;
+    console.log({ bareFileName });
+    const component = mod as TemplateExports;
+    console.log({ component });
     const result: TemplateData = {
       jsx: sources[bareFileName],
       Name: component.Name || parseName(path),
@@ -54,7 +57,8 @@ const templates = await Promise.all(
 );
 
 const templateNames = templates.map((template) => template.Name!);
-
+// const templateNames: string[] = [];
+// const templateRoutes: RouteObject[] = [];
 const templateRoutes: RouteObject[] = templates.map((template) => {
   const { Name, PreviewProps, Struct, Template } = template;
   let props: any;
@@ -87,6 +91,24 @@ const router = createBrowserRouter([
     ),
     errorElement: <Error />,
     path: '/'
+  },
+  {
+    element: (
+      <Layout>
+        <Home templateNames={templateNames} />
+      </Layout>
+    ),
+    errorElement: <Error />,
+    path: '/index.html'
+  },
+  {
+    element: (
+      <Layout>
+        <Home templateNames={templateNames} />
+      </Layout>
+    ),
+    errorElement: <Error />,
+    path: '/samps/index.html'
   },
   ...templateRoutes
 ]);

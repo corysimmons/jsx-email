@@ -47,13 +47,7 @@ export const command: CommandFn = async (argv: PreviewOptions, input) => {
   return true;
 };
 
-export const start = async (targetPath: string, argv: PreviewOptions) => {
-  if (!existsSync(targetPath)) {
-    error(chalk`\n{red D'oh} The directory provided ({dim ${targetPath}}) doesn't exist`);
-    return;
-  }
-
-  const { open = true, port = 55420 } = argv;
+export const makeConfig = async (targetPath: string): Promise<InlineConfig> => {
   const { default: config } = await import('../../app/vite.config');
   const componentPaths = await globby(join(targetPath, '/*.{jsx,tsx}'));
   const templateSources = {} as Record<string, string>;
@@ -64,7 +58,7 @@ export const start = async (targetPath: string, argv: PreviewOptions) => {
       await readFile(path, 'utf8');
   }
 
-  const mergedConfig = {
+  return {
     configFile: false,
     ...config,
     define: {
@@ -75,11 +69,20 @@ export const start = async (targetPath: string, argv: PreviewOptions) => {
       alias: {
         '@': targetPath
       }
-    },
-    server: { port }
-  } as InlineConfig;
+    }
+  };
+};
 
-  const server = await createServer(mergedConfig);
+export const start = async (targetPath: string, argv: PreviewOptions) => {
+  if (!existsSync(targetPath)) {
+    error(chalk`\n{red D'oh} The directory provided ({dim ${targetPath}}) doesn't exist`);
+    return;
+  }
+
+  const { open = true, port = 55420 } = argv;
+
+  const config = await makeConfig(targetPath);
+  const server = await createServer({ ...config, server: { port } });
 
   info(chalk`  🚀 {yellow JSX email} Preview\n`);
 

@@ -19,7 +19,7 @@ interface StackOverflowTipsEmailProps {
   tips?: { id: number; description: string }[];
 }
 
-const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '';
+const baseUrl = '';
 
 const PropDefaults: StackOverflowTipsEmailProps = {
   tips: [

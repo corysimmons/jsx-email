@@ -24,7 +24,7 @@ interface NetlifyWelcomeEmailProps {
   links?: string[];
 }
 
-const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '';
+const baseUrl = '';
 
 const PropDefaults: NetlifyWelcomeEmailProps = {
   steps: [
