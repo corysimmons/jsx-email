@@ -1,0 +1,10 @@
+{
+  "name": "imports",
+  "type": "module",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "@jsx-email/body": "workspace:*"
+  }
+}
