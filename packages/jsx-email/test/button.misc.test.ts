@@ -1,5 +1,5 @@
-import { pxToPt } from '../src/button';
-import { convertToPx, parsePadding } from '../src/padding';
+import { pxToPt } from '../src/components/button';
+import { convertToPx, parsePadding } from '../src/helpers/padding';
 
 describe('convertToPx', () => {
   it('converts "10px" to 10', () => {

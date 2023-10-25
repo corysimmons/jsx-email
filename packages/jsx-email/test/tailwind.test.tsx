@@ -1,8 +1,9 @@
 import { renderToStaticMarkup as render } from 'react-dom/server';
 import { type TailwindConfig } from 'tw-to-css';
-import { Hr } from '@jsx-email/hr';
-import { Head } from '@jsx-email/head';
-import { Html } from '@jsx-email/html';
+
+import { Hr } from '../src/components/hr';
+import { Head } from '../src/components/head';
+import { Html } from '../src/components/html';
 
 import { Tailwind } from '../dist';
 
