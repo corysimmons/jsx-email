@@ -14,6 +14,13 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      create-jsx-email:
+        specifier: ^0.0.0
+        version: 0.0.0
+      jsx-email:
+        specifier: ^0.0.0
+        version: 0.0.0
     devDependencies:
       '@dot/versioner':
         specifier: ^0.2.0
@@ -3101,6 +3108,10 @@ packages:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
     dev: false
 
+  /create-jsx-email@0.0.0:
+    resolution: {integrity: sha512-jA+MU8AgEVnLcT8c8810oSH37p06TslPKb5grJEDdNTIMoqWKrceOVKtj+OPgiEEX2exNogQtGXjNCvvFFX6EQ==}
+    dev: false
+
   /create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
 
@@ -4684,6 +4695,10 @@ packages:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
     engines: {'0': node >= 0.2.0}
     dev: true
+
+  /jsx-email@0.0.0:
+    resolution: {integrity: sha512-ieYSNc8YJRnXhEpKIlmFN496K/hHaZfT6UgzGxacuw7eir6CS+5bsjzVdCYz13MAbcz/CPlvPC7NNWwxdSqvnQ==}
+    dev: false
 
   /keyv@4.5.3:
     resolution: {integrity: sha512-QCiSav9WaX1PgETJ+SpNnx2PRRapJ/oRSXM4VO5OGYGSjrxbKPVFVhB3l2OCbLCk329N8qyAtsJjSjvVBWzEug==}

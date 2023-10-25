@@ -22,10 +22,11 @@ interface TemplateData extends TemplateExports {
   jsx: string;
 }
 
+const { warn } = console;
 const parseName = (path: string) => {
   const chunks = path.replace('\\', '/').split('/');
   const segment = chunks.at(-1);
-  const basename = segment!.split(/\.[^.]+$/)[0];
+  const [basename] = segment!.split(/\.[^.]+$/);
 
   return titleize(basename);
 };
@@ -56,7 +57,7 @@ const templateRoutes: RouteObject[] = templates.map((template) => {
   if (Struct) props = create({}, Struct);
   else if (PreviewProps) props = PreviewProps();
   else if ((Template as any).PreviewProps) {
-    console.warn(
+    warn(
       `jsx-email: ${Name} → PreviewProps as a property of a component is deprecated. Please used a named export.`
     );
     props = (Template as any).PreviewProps;

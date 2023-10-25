@@ -22,7 +22,7 @@ const getSizesClassNames = (size: TextSize | undefined) => {
   switch (size) {
     case '1':
       return 'text-xs';
-    case undefined:
+    case void 0:
     case '2':
       return 'text-sm';
     case '3':
@@ -46,7 +46,7 @@ const getSizesClassNames = (size: TextSize | undefined) => {
 
 const getWeightClassNames = (weight: TextWeight | undefined) => {
   switch (weight) {
-    case undefined:
+    case void 0:
     case 'normal':
       return 'font-normal';
     case 'medium':

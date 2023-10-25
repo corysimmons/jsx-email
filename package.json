@@ -6,6 +6,10 @@
     "bootstrap": "./shared/bootstrap.sh",
     "prepare": "husky install"
   },
+  "peerDependencies": {
+    "create-jsx-email": "^0.0.0",
+    "jsx-email": "^0.0.0"
+  },
   "devDependencies": {
     "@dot/versioner": "^0.2.0",
     "@moonrepo/cli": "^1.15.2",

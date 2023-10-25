@@ -53,7 +53,7 @@ describe('renderAsync using renderToReadableStream', () => {
         return {
           next: () => {
             if (done) {
-              return Promise.resolve({ done: true, value: undefined });
+              return Promise.resolve({ done: true, value: void 0 });
             }
 
             done = true;
@@ -72,7 +72,7 @@ describe('renderAsync using renderToReadableStream', () => {
     vi.restoreAllMocks();
     vi.resetModules();
 
-    (ReactDOMServer.renderToStaticMarkup as unknown as undefined) = undefined;
+    (ReactDOMServer.renderToStaticMarkup as unknown as undefined) = void 0;
     ReactDOMServer.renderToReadableStream = mockRenderToReadableStream;
   });
 

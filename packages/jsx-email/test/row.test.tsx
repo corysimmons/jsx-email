@@ -26,7 +26,7 @@ describe('<Row> component', () => {
   });
 
   it('renders correctly', () => {
-    const actualOutput = render(<Row children={undefined} />);
+    const actualOutput = render(<Row children={void 0} />);
     expect(actualOutput).toMatchSnapshot();
   });
 });

@@ -68,7 +68,7 @@ describe('withSpace', () => {
   });
 
   it('should return an empty object for undefined value', () => {
-    const result = withSpace(undefined, ['margin']);
+    const result = withSpace(void 0, ['margin']);
     expect(result).toEqual({});
   });
 
