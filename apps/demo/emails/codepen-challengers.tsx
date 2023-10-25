@@ -12,7 +12,7 @@ import {
   Section,
   Text,
   Row
-} from '@jsx-email/all';
+} from 'jsx-email';
 import * as React from 'react';
 
 const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '';

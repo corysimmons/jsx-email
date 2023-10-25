@@ -22,7 +22,7 @@ const getSizesClassNames = (size: HeadingSize | undefined) => {
       return 'text-xs';
     case '2':
       return 'text-sm';
-    case undefined:
+    case void 0:
     case '3':
       return 'text-base';
     case '4':
@@ -52,7 +52,7 @@ const getWeightClassNames = (weight: HeadingWeight | undefined) => {
     case 'medium':
       return 'font-medium';
     case 'bold':
-    case undefined:
+    case void 0:
       return 'font-bold';
     default:
       return unreachable(weight);
