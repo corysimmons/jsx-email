@@ -30,7 +30,7 @@ tasks:
       - package.json
 
   compile:
-    command: tsup --config ../../shared/tsup.config.ts
+    command: tsup --config ./tsup.config.ts
     inputs:
       - src
       - package.json
@@ -49,13 +49,6 @@ tasks:
       cache: false
       outputStyle: 'stream'
 
-  tsconfig.link:
-    command: ln -sf ../../shared/tsconfig.default.json tsconfig.json
-    options:
-      cache: false
-      outputStyle: 'stream'
-    platform: system
-
   test:
     command: vitest --config ../../shared/vitest.config.ts
     deps:
@@ -67,3 +60,10 @@ tasks:
     options:
       cache: true
       outputStyle: 'stream'
+
+  tsconfig.link:
+    command: ln -sf ../../shared/tsconfig.default.json tsconfig.json
+    options:
+      cache: false
+      outputStyle: 'stream'
+    platform: system

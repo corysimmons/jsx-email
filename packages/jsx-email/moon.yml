@@ -11,6 +11,6 @@ tasks:
       - ~:copy
 
   copy:
-    command: cp -r template dist
+    command: cp -r assets dist
     options:
       cache: false
