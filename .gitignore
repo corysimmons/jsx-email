@@ -10,4 +10,4 @@ dist
 .nojekyll
 **/.vitepress/cache
 
-# packages/**/tsconfig.json
+packages/**/tsconfig.json
