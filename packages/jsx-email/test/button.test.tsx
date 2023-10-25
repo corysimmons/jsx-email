@@ -1,4 +1,4 @@
-import { render } from '@jsx-email/render';
+import { render } from '../src/helpers/render';
 
 import { Button } from '../src';
 

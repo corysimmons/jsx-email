@@ -5,14 +5,14 @@ description: 'Use JSX email with an Email Provider of your choice'
 
 <!--@include: @/include/header.md-->
 
-Using JSX email with email providers or integrations is as simple as rendering the template you've already built. Rendering transforms your template from JSX/TSX into HTML, and optionally plain text. That's accomplished with the [@jsx-email/render](/docs/core/render) core package. _We're going to assume that you've made it through the [Quick Start Guide](/docs/quick-start) before arriving here, and have an email template to use._
+Using JSX email with email providers or integrations is as simple as rendering the template you've already built. Rendering transforms your template from JSX/TSX into HTML, and optionally plain text. That's accomplished with the [`render`](/docs/core/render) core function. _We're going to assume that you've made it through the [Quick Start Guide](/docs/quick-start) before arriving here, and have an email template to use._
 
 While JSX email can be used with just about any emal provider that takes a string for content input, this page will demonstrate use with a few popular providers.
 
 ## AWS SES
 
 ```tsx
-import { render } from '@jsx-email/render';
+import { render } from 'jsx-email';
 import { SES } from '@aws-sdk/client-ses';
 
 import { BatmanTemplate } from './emails/Batman.tsx';
@@ -43,7 +43,7 @@ await ses.sendEmail({
 ## Mailersend
 
 ```tsx
-import { render } from '@jsx-email/render';
+import { render } from 'jsx-email';
 import { MailerSend, EmailParams, Sender, Recipient } from 'mailersend';
 
 import { BatmanTemplate } from './emails/Batman.tsx';
@@ -68,7 +68,7 @@ mailerSend.email.send(params);
 ## Nodemailer
 
 ```tsx
-import { render } from '@jsx-email/render';
+import { render } from 'jsx-email';
 import nodemailer from 'nodemailer';
 
 import { BatmanTemplate } from './emails/Batman.tsx';
@@ -95,7 +95,7 @@ await transport.sendMail({
 ## Postmark
 
 ```tsx
-import { render } from '@jsx-email/render';
+import { render } from 'jsx-email';
 import { ServerClient } from 'postmark';
 
 import { BatmanTemplate } from './emails/Batman.tsx';
@@ -131,7 +131,7 @@ resend.sendEmail({
 ## Sendgrid
 
 ```tsx
-import { render } from '@jsx-email/render';
+import { render } from 'jsx-email';
 import sendgrid from '@sendgrid/mail';
 
 import { BatmanTemplate } from './emails/Batman.tsx';
