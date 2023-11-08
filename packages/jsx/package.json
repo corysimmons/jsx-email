@@ -1,17 +1,17 @@
 {
-  "name": "@jsx-email/render",
-  "version": "2.0.0",
+  "name": "@jsx-email/jsx",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Render JSX email components to HTML email",
+  "description": "JSX Primatives and Rendering for JSX Email",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shellscape/jsx-email.git",
-    "directory": "packages/render"
+    "url": "https://github.com/shellscape/jsx-email-hono.git",
+    "directory": "packages/tailwind"
   },
-  "homepage": "https://jsx.email/docs/core/render",
+  "homepage": "https://jsx.email/docs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "exports": {
@@ -33,24 +33,6 @@
   "files": [
     "dist/**"
   ],
-  "keywords": [
-    "react",
-    "email"
-  ],
-  "dependencies": {
-    "cheerio": "1.0.0-rc.12",
-    "hono": "3.10.0-rc.1",
-    "html-minifier-terser": "^7.2.0",
-    "html-to-text": "9.0.5",
-    "pretty": "2.0.0"
-  },
-  "devDependencies": {
-    "@types/html-minifier-terser": "^7.0.0",
-    "@types/html-to-text": "^9.0.2",
-    "@types/pretty": "^2.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
   "types": "dist/index.d.mts",
   "funding": {
     "type": "github",

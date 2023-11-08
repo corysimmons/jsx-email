@@ -2,7 +2,8 @@ import { load } from 'cheerio';
 import { minify as minifyHtml } from 'html-minifier-terser';
 import { convert } from 'html-to-text';
 import prettyHtml from 'pretty';
-// import type { FC } from 'hono/jsx';
+
+import { jsxToString } from './jsx-to-string';
 
 export interface Options {
   minify?: boolean;
@@ -38,22 +39,22 @@ const stripHtml = (html: string) => {
   return $.html()!;
 };
 
-const renderPlainText = (component: JSX.Element, _options?: Options) =>
-  convert(component.toString(), {
+const renderPlainText = (component: React.ReactElement, _options?: Options) =>
+  convert(jsxToString(component), {
     selectors: [
       { format: 'skip', selector: 'img' },
       { format: 'skip', selector: '[data-id="@jsx-email/preview"]' }
     ]
   });
 
-export const render = async (component: JSX.Element, options?: Options) => {
+export const render = async (component: React.ReactElement, options?: Options) => {
   const { minify, plainText, pretty, strip = true } = options || {};
 
   if (plainText) return renderPlainText(component, options);
 
   const doctype =
     '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">';
-  const markup = component.toString();
+  const markup = jsxToString(component);
   let html = `${doctype}${markup}`;
 
   html = combineHeads(html);

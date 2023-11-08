@@ -9,6 +9,7 @@
     "inlineSources": false,
     "isolatedModules": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
     "lib": ["ES2023"],
     "module": "commonjs",
     "moduleResolution": "node",
@@ -21,7 +22,8 @@
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "types": ["node", "hono"]
   },
   "exclude": ["**/dist", "**/node_modules"]
 }

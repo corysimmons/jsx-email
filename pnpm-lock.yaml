@@ -422,6 +422,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
 
+  packages/jsx: {}
+
   packages/link:
     dependencies:
       react:
@@ -448,6 +450,9 @@ importers:
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
+      hono:
+        specifier: 3.10.0-rc.1
+        version: 3.10.0-rc.1
       html-minifier-terser:
         specifier: ^7.2.0
         version: 7.2.0
@@ -4932,6 +4937,11 @@ packages:
 
   /hey-listen@1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
+    dev: false
+
+  /hono@3.10.0-rc.1:
+    resolution: {integrity: sha512-yd8lttFjEZKy7u+g1leqVpHCIvxMrWW2H9VdhcIztMcrDeai4ygzNQij4LL88CHzzmRgymW79r5wQkObhJVGtQ==}
+    engines: {node: '>=16.0.0'}
     dev: false
 
   /hosted-git-info@2.8.9:

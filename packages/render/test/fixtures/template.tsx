@@ -1,10 +1,9 @@
-import React from 'react';
-
-interface TemplateProps {
+interface TemplateProps extends JSX.ElementChildrenAttribute {
+  deprecatedLegacyContext?: any;
   firstName: string;
 }
 
-export const Template: React.FC<Readonly<TemplateProps>> = ({ firstName }) => (
+export const Template = ({ firstName }: TemplateProps) => (
   <>
     <h1>Welcome, {firstName}!</h1>
     <img src="img/test.png" alt="test" />
